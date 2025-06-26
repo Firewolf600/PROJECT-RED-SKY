@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+<style>
+body {
+padding-top: 1em;
+}	
+</style> <div class="container-fluid">
+		
+
+
+</div>
+		
+<!-- Bundled -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJECT RED SKY:AAD : Aerial Anomaly Division</title>
+    <style>
+        /*
+        ========================================
+        GLOBAL RESET & BRUTALIST SETUP
+        ========================================
+        */
+        :root {
+            --main-bg: #FFFFFF;
+            --main-text: #000000;
+            --border-color: #000000;
+            --accent-color: #00FF00; /* Neon Green */
+            --border-width: 2px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            background-color: var(--main-bg);
+            color: var(--main-text);
+            font-family: 'Courier New', Courier, monospace;
+            font-synthesis: none; /* Disables browser-faked bold/italics for a rawer feel */
+            text-rendering: optimizeLegibility;
+        }
+
+        /*
+        ========================================
+        CORE LAYOUT & GRID STRUCTURE
+        ========================================
+        */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr; 
+            width: 100%;
+            border: var(--border-width) solid var(--border-color);
+            background-color: var(--border-color); /* This color shows through the gaps, creating the grid lines */
+            gap: var(--border-width); /* Creates the visible grid lines */
+        }
+
+        .grid-item {
+            background-color: var(--main-bg);
+            padding: 1.5rem;
+        }
+
+        /* Span the header across the full width */
+        .header {
+            grid-column: 1 / -1;
+        }
+
+        /*
+        ========================================
+        TYPOGRAPHY & CONTENT STYLING
+        ========================================
+        */
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: normal;
+            text-transform: uppercase;
+            padding-bottom: 0.75rem;
+            margin-bottom: 1.5rem;
+            border-bottom: var(--border-width) solid var(--border-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+        }
+
+        a {
+            color: var(--main-text);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: none; /* Brutalism avoids smooth transitions */
+            outline: var(--border-width) solid transparent;
+            outline-offset: 3px;
+        }
+
+        a:hover, a:focus {
+            color: var(--accent-color);
+            background-color: var(--main-text);
+            text-decoration: none;
+            outline-color: var(--accent-color);
+        }
+        
+        /* Raw, unstyled contact info */
+        .contact-info {
+            font-size: 1.1rem;
+            word-wrap: break-word;
+        }
+        
+        /*
+        ========================================
+        IMAGE STYLING
+        ========================================
+        */
+        figure {
+            margin: 0;
+        }
+
+        .portfolio-image {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border: var(--border-width) solid var(--border-color);
+        }
+
+        figcaption {
+            font-size: 0.8rem;
+            padding-top: 0.5rem;
+            color: var(--main-text);
+        }
+
+        /*
+        ========================================
+        RESPONSIVENESS
+        ========================================
+        */
+        @media (max-width: 768px) {
+            .portfolio-grid {
+                /* Stack everything into a single column on smaller screens */
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.1rem;
+            }
+        }
+
+
+    
+    </style>
+</head>
+<body>
+
+    <main class="portfolio-grid">
+
+        <header class="grid-item header">
+            <h1>PROJECT RED SKY: <h2>Aerial Anomaly Division</h2.5> </h2>
+        </header>
+
+        <section id="work" class="grid-item">
+            <h2>Recent flight tracking data</h2>
+            <ul>
+
+
+                
+                <li><a href="NATO.html"><b>➤ Heightened NATO air operations observed during and leading up to the summit...</b></a> <span class="badge bg-success">military</span>   <span class="badge bg-dark">NATO</span> </li>
+                 <li><a href="#">‎ ‎ ‎ ‎ </a></li>
+
+                <li><a href="Uk_NATO.html"><b>➤Unusual concentration of UK military aircraft recorded, likely connected to the NATO summit...</b></a>  <span class="badge bg-success">military</span>   <span class="badge bg-primary">Tracked realtime</span>  </li>
+
+                 <li><a href="#">‎ ‎ ‎ ‎ </a></li>
+                <li><b><a href="USA-ME.html">➤ U.S. military flights detected over the Middle East, one UK airforce presence noted over Cyprus...</a></b> <span class="badge bg-warning">Gold</span>   <span class="badge bg-success">military</span>   <span class="badge bg-dark">Grouped info</span>   <span class="badge bg-primary">1/2 Tracked real time</span>    </li>
+                <li><a href="#">‎ ‎ ‎ ‎ </a></li>
+                <li><b><a href="ME-SPOOF.html">➤Elevated GPS spoofing detected near Iranian airspace, one case showed a Qatari military aircraft inside Iranian territory. Additional reports of GPS failures in UAE...</a> <span class="badge bg-danger">Critical info</span> <span class="badge bg-primary">Happening realtime</span></b> </li>
+                <li><a href="#">‎ ‎ ‎ ‎ </a></li>
+                <li><b><a href="REROUTE.html">➤ Multiple civilian aircraft diverted to Bahrain due to increased safety concerns in Middle Eastern airspace... </a><span class="badge bg-info">civilian</span>    <span class="badge bg-primary">Tracked realtime</span></b></li>
+                <li><a href="#">‎ ‎ ‎ ‎ </a></li>
+                <li><b><a href="USA-ME-GOLD.html">➤USAF C-17A entered the Middle East—suspected high-level coordination with KSA, timing aligns with pre-emptive strike discussions on Iran...</a></span><span class="badge bg-warning">Gold</span> <span class="badge bg-success">military</span> <span class="badge bg-primary">Tracked realtime</span></b></li>
+                 
+            </ul>
+        </section>
+
+        <aside class="grid-item">
+            <figure>
+                <img src="https://tenor.com/view/ascii-saas-security-cyber-security-radar-discovery-gif-26180802.gif", alt="A black and white placeholder image." class="portfolio-image">
+                <figcaption>A website dedicated to post aviation OSINT to obtain news about global events faster <br> <strong>Disclaimer: These are just my finding and speculations , there may be errors, however the flight path will be on point.feel free to reach out if you spot any errors!<br><br> landing page for Project:Red Skys will be made later, feel free to drop any suggestions the website is in its beta testing stage.<br> </strong></figcaption>
+            </figure>
+        </aside>
+
+        <section id="exhibitions" class="grid-item">
+            <h2>CURRENTLY MONITORED AIRSPACE</h2>
+            <ul>
+                <li><strong>Active Surveillance Zone</strong> — Middle East <span style="color:rgba(77, 173, 21, 0.603);font-weight:bold;">[LOW/NONE]</span></li>
+                <li><strong>Archived</strong> — NATO <span style="color:rgb(57, 59, 198);font-weight:bold;">[ENDED]</span> </li>
+                <li><strong>POSSIBLE UPCOMING</strong> — Russia Ukraine airspace<span style="color:rgb(0, 0, 0);font-weight:bold;">[SCOUTING]</span></li> </li>
+               
+            </ul>
+        </section>
+
+        <section id="contact" class="grid-item">
+            <h2>CONTACT</h2>
+            <p class="contact-info">
+                For inquiries, please contact: <a href="mailto:email@example\.com"> @totally_not_the_firewolf on discord (email will be put here later) </a>
+            </p>
+        </section>
+
+    </main>
+
+</body>
+</html>

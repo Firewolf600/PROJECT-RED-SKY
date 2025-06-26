@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Thinker's Journal - An Article Title</title>
+    <meta name="description" content="A minimalist and content-focused blog template.">
+    
+    <style>
+        /* ==========================================================================
+        1.  ** GOOGLE FONTS & CSS VARIABLES **
+        ==========================================================================
+        */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
+
+        :root {
+            /* Fonts */
+            --font-family-sans: 'Inter', sans-serif;
+            --font-family-serif: 'Lora', serif;
+
+            /* Colors */
+            --color-background: #FFFEFC;
+            --color-text: #212121;
+            --color-text-light: #585858;
+            --color-accent: #000000;
+            --color-border: #EAEAEA;
+            --color-code-bg: #F4F4F4;
+
+            /* Typography Scale */
+            --font-size-base: 1.125rem; /* 18px */
+            --font-size-h1: 2.8rem;
+            --font-size-h2: 2rem;
+            --font-size-h3: 1.5rem;
+            --font-size-small: 0.9rem;
+            --line-height-base: 1.7;
+            --line-height-heading: 1.2;
+
+            /* Sizing & Spacing */
+            --content-width: 740px;
+            --spacing-unit: 1.5rem;
+        }
+
+        /* ==========================================================================
+        2.  ** RESET & BASE STYLES **
+        ==========================================================================
+        */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 100%; 
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--font-family-serif);
+            font-size: var(--font-size-base);
+            line-height: var(--line-height-base);
+            color: var(--color-text);
+            background-color: var(--color-background);
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ==========================================================================
+        3.  ** TYPOGRAPHY & CONTENT STYLES **
+        ==========================================================================
+        */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-family-sans);
+            font-weight: 700;
+            line-height: var(--line-height-heading);
+            margin: calc(var(--spacing-unit) * 2) 0 var(--spacing-unit);
+        }
+
+        h1 { font-size: var(--font-size-h1); }
+        h2 { font-size: var(--font-size-h2); }
+        h3 { font-size: var(--font-size-h3); }
+
+        p {
+            margin: 0 0 var(--spacing-unit);
+        }
+
+        a {
+            color: var(--color-accent);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover, a:focus {
+            color: var(--color-text);
+            text-decoration: underline;
+        }
+        
+        a:focus-visible {
+            outline: 2px solid var(--color-accent);
+            outline-offset: 4px;
+        }
+
+        blockquote {
+            margin: calc(var(--spacing-unit) * 2) 0;
+            padding-left: var(--spacing-unit);
+            border-left: 4px solid var(--color-accent);
+            font-style: italic;
+            color: var(--color-text-light);
+        }
+
+        blockquote p {
+            margin-bottom: 0;
+        }
+
+        blockquote cite {
+            display: block;
+            margin-top: 0.5rem;
+            font-style: normal;
+            font-size: var(--font-size-small);
+        }
+        
+        pre {
+            background-color: var(--color-code-bg);
+            padding: var(--spacing-unit);
+            border-radius: 6px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        code {
+            font-family: monospace, monospace;
+            background-color: var(--color-code-bg);
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 90%;
+        }
+
+        pre code {
+            background-color: transparent;
+            padding: 0;
+            font-size: 100%;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--color-border);
+            margin: calc(var(--spacing-unit) * 3) 0;
+        }
+
+        /* ==========================================================================
+        4.  ** LAYOUT & STRUCTURE **
+        ==========================================================================
+        */
+        .site-container {
+            max-width: var(--content-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .site-header {
+            padding: var(--spacing-unit) 0;
+            margin-bottom: calc(var(--spacing-unit) * 2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .site-header__title {
+            margin: 0;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .site-header__nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+        }
+        
+        .site-header__nav li {
+            margin-left: var(--spacing-unit);
+        }
+        
+        .site-header__nav a {
+            font-family: var(--font-family-sans);
+            font-size: var(--font-size-small);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--color-text-light);
+            font-weight: 700;
+        }
+
+        .site-footer {
+            margin-top: calc(var(--spacing-unit) * 3);
+            padding: var(--spacing-unit) 0;
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+            font-size: var(--font-size-small);
+            color: var(--color-text-light);
+        }
+        
+        /* ==========================================================================
+        5.  ** ARTICLE SPECIFIC STYLES **
+        ==========================================================================
+        */
+        .article-header {
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        .article-header h1 {
+            margin: 0 0 0.5rem;
+        }
+        
+        .article-meta {
+            font-family: var(--font-family-sans);
+            font-size: var(--font-size-small);
+            color: var(--color-text-light);
+        }
+
+        .article-meta span:not(:last-child)::after {
+            content: "â€¢";
+            margin: 0 0.5em;
+        }
+
+        .article-image {
+            margin: calc(var(--spacing-unit) * 2) 0;
+        }
+
+        .article-image img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 6px;
+        }
+        
+        .article-image figcaption {
+            font-size: var(--font-size-small);
+            color: var(--color-text-light);
+            text-align: center;
+            margin-top: 0.75rem;
+        }
+        
+        .article-footer {
+            margin-top: calc(var(--spacing-unit) * 2);
+        }
+
+        .social-share, .article-tags {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-family: var(--font-family-sans);
+            font-size: var(--font-size-small);
+        }
+        
+        .social-share strong, .article-tags strong {
+            color: var(--color-text);
+        }
+
+        .social-share ul, .article-tags ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .social-share a {
+            display: block;
+        }
+        
+        .social-share svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--color-text-light);
+            transition: fill 0.2s ease;
+        }
+
+        .social-share a:hover svg,
+        .social-share a:focus svg {
+            fill: var(--color-text);
+        }
+        
+        .article-tags a {
+            background-color: var(--color-code-bg);
+            padding: 0.2em 0.7em;
+            border-radius: 1em;
+            color: var(--color-text-light);
+        }
+
+        .article-tags a:hover,
+        .article-tags a:focus {
+            background-color: #e0e0e0;
+            color: var(--color-text);
+            text-decoration: none;
+        }
+
+        .author-bio {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-unit);
+            padding: var(--spacing-unit);
+            margin-top: calc(var(--spacing-unit) * 3);
+            background-color: var(--color-code-bg);
+            border-radius: 8px;
+        }
+        
+        .author-bio__image {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        
+        .author-bio__info h4 {
+            margin: 0 0 0.25rem;
+            font-size: 1.2rem;
+        }
+        
+        .author-bio__info p {
+            margin: 0;
+            font-size: var(--font-size-small);
+            line-height: 1.5;
+            color: var(--color-text-light);
+        }
+
+        /* ==========================================================================
+        6.  ** RESPONSIVENESS **
+        ==========================================================================
+        */
+        @media (max-width: 768px) {
+            :root {
+                --font-size-base: 1rem; /* 16px */
+                --font-size-h1: 2rem;
+                --font-size-h2: 1.6rem;
+                --spacing-unit: 1rem;
+            }
+
+            .site-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .site-header__nav li:first-child {
+                margin-left: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="site-container">
+
+        <header class="site-header" role="banner">
+            <h2 class="site-header__title"><a href="#">PROJECT RED SKY:(AAD)</a></h2>
+            <nav class="site-header__nav" aria-label="Main Navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">About</a></li>
+                    <li><a href="index.html">Archive</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="site-content" role="main">
+            <article>
+                <header class="article-header">
+                    <h1>USA flight activities tracked in Middle east airspace + found(1) UK airforce activity in Cyprus</h1>
+                    <div class="article-meta">
+                        <span>By Ved S| Firewolf600 </span>
+                        <time datetime="2025-06-08">June 24, 2025</time>
+                        <span>4 min read</span>
+                    </div>
+                </header>
+
+                <div class="article-body">
+                    <p>Couple hours after the US bombed Iran a possible Lockheed C-130 Hercules with no callsign was seen , it most likely departed from King Abdulaziz Air Base (DHA/OEDR)  a known Saudi Royal Air Force installation near Dhahran. </p>
+
+                    <p>The C-130 Hercules is known for its versitile role from being a gunship to a cargo hold or an  refueler/surveillance so it is not possible to speculate any critical info from this flight, nonetheless it was fun tracking this plane </p>
+
+                    <figure class="article-image">
+                        <img src="USA-ME.png" alt="">
+                        <figcaption>Above image consists of the above mentioned plane with no call sign which belongs to the US Air force</figcaption>
+                    </figure>
+
+                     <h2>Flight details</h2>
+                    <p>Aircraft :[ N/A ] : C-130
+                    
+
+                    <p>Operator: US Military </p>
+
+                    <p>Type: Heavyduty Multirole</p>
+                    
+                    
+                
+                    <p><b>case 2. . . . . . . . . . . . . . . . . . . . . </b></p>
+                    <p>18:58 UTC  a Boeing KC-135R Stratotanker with call sign PYTHN05  was spotted entering the middleeast airspace , this would be one of the two refueler type aircraft that I tracked</p>
+                    <p>My speculation is that this was a decoy plane or probably some low importance  mission refueler , The second image based on this case may prove this point.</p>
+
+
+
+                    <figure class="article-image">
+                        <img src="USA-ME2.png" alt="">
+                        <figcaption>Above image consists of the above mentioned refueler with a valid call sign PYTHN05 with valid registration 63-7985  </figcaption>
+                    </figure>
+
+
+                    <h2>Flight details</h2>
+                    <p>Aircraft :[ PYTHN05 ] : KC-135R
+                    
+
+                    <p>Operator: US Air force </p>
+
+                    <p>Type: Refueler </p>
+                    
+
+                   <p>19:56UTC Another refueler Boeing KC-135T was spotted with no call sign but with valid registration 58-0069 was spotted having a similar path to the first refueler , this leads me  to speculate that this refueler was used for  some high importance mission or some high importance refueling work </p>
+                     <figure class="article-image">
+                        <img src="USA-ME3.png" alt="">
+                        <figcaption>Above image consists of the above mentioned refueler with no call sign but with reg number 58-0069</figcaption>
+                   
+                   
+                   
+                    <p><b>case 3- Uk RAF going toward Cyprus. . . . . . . . . . . . . . . . . . . . . </b></p>
+                    <p>19:04UTC A UK Royal Air force fighter plane was spotted entering Cyprus , probably some military discussion considering how Cyprus is a Safe house for important Israel figures. The callsign on the aircraft was RRR9960X(highly anon)  </p>
+                    <img src="UK-ME.png" alt="">
+
+
+                   <div class="article-tags">
+                        <strong>Tags:</strong>
+                        <ul>
+                            <li><a href="#">MIDDLE EAST- UK - USA </a></li>
+                            <li><a href="#">Military</a></li>
+                            
+                        </ul>
+                    </div>
+                </footer>
+            </article>
+
+            <aside class="author-bio" aria-label="Author Information">
+                <div class="author-bio__info">
+                    <h4>Contribute to our page!</h4>
+                    <p>If you have any additional information that you think would benifit others from reading it from this page contact me on discord" @totally_not_the_firewolf "! Join  Project RED SKY now!</p>
+                </div>
+            </aside>
+        </main>
+        
+        <footer class="site-footer" role="contentinfo">
+            <p>&copy; 2025 Project Red Skys. All Rights Reserved.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
